@@ -70,7 +70,16 @@ This route should display a list of **partials** for each one of the presents, w
 
 ---
 
-## Iteration 4 (not a bonus): styling 🎨
+## Iteration 4: DELETE route 🗑️
+
+### GET /presents/delete/:id
+
+- On the /presents view, each one of the cards should have a button to delete the document
+- Once the present is deleted, the user should be redirected to the /presents route
+
+---
+
+## Iteration 5 (not a bonus): styling 🎨
 
 Add styles to all the views
 
