@@ -1,6 +1,6 @@
-# Dear Santa App 🎄
+# 🎄 Dear Santa App 🎄
 
-![christmas gif]('public/images/christmas.gif')
+![christmas gif](public/images/christmas.gif)
 
 This project has been initialized with `express generator`. It already has `mongoose` and `nodemon` installed, so all that's left to do is:
 ```bash
