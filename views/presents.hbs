@@ -1,9 +1,6 @@
-<div>
+<div class="all-presents-container">
   {{#each presents}}
-    <div>
-      <h2> {{name}}</h2>
-      <img src={{image}} alt={{name}}>
-      <button><a href="/presents/{{id}}">See more</a></button>
-    </div>
+    {{> cardPresents this}}
+    <button class="present-card-button"><a href="/presents/{{id}}">See more</a></button>
   {{/each}}
 </div>
