@@ -1,0 +1,9 @@
+<div>
+  {{#each presents}}
+    <div>
+      <h2> {{name}}</h2>
+      <img src={{image}} alt={{name}}>
+      <button><a href="/presents/{{id}}">See more</a></button>
+    </div>
+  {{/each}}
+</div>

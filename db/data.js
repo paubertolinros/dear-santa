@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     name: 'Fuji Bike',
-    image: '/images/bike-white.jpeg',
+    image: '/images/bike-white.jpg',
     price: 200,
     recipient: 'Carla',
     season: 'birthday',
