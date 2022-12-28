@@ -17,7 +17,10 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
-
+/*HELPER UPPERCASE*/
+hbs.registerHelper('toUpperCase', function(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+});
 
 app.use(logger('dev'));
 app.use(express.json());
