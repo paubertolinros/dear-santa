@@ -1,9 +1,10 @@
 const express = require('express');
+//const { } = require('../app.js');
 const router = express.Router();
 const Present = require("../models/Present.model.js")
 
 /* GET Presents page */
-/* ROUTE /presents page */
+/* ROUTE /presents*/
 router.get('/', async (req, res, next) => {
   try {
     const presents = await Present.find({});
@@ -14,8 +15,29 @@ router.get('/', async (req, res, next) => {
   } 
 });
 
-/* GET Present Detail page */
-/* ROUTE /presents/:id page */
+/* GET form view */
+/* ROUTE /presents/new */
+router.get('/new', (req, res, next) => {
+  res.render('newPresent')
+})
+
+/* POST get users present inputs */
+/* ROUTE /presents/new */
+router.post('/new', async (req, res, next) => {
+  const { name, image, price, recipient, season, description } = req.body;
+  try {
+    const newPresent = await Present.create({ name, image, price, recipient, season, description });
+    //res.redirect(`/presents/${newPresent._id}`); redirect detail
+    res.redirect('/presents'); // redirect all presents
+  } catch (error) {
+    next(error)
+  }
+});
+
+
+
+/* GET One Present - Present Detail page */
+/* ROUTE /presents/:id */
 router.get('/:presentId', async (req, res, next) => {
   const { presentId } = req.params;
   try {
