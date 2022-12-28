@@ -9,7 +9,15 @@ router.get('/', async (req, res, next) => {
   try {
     const presents = await Present.find({});
     res.render('presents', { presents });
-    return Present.updateOne({name: "The Colour Monster"}, {$set: {image:"/images/colour-monster-book-1.jpeg"}})
+    //Sort presents alphabetically
+    const orderPresents = presents.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      } if (a.name > b.name) {
+        return 1;
+      } return 0;
+    });
+    //return Present.updateOne({name: "The Colour Monster"}, {$set: {image:"/images/colour-monster-book-1.jpeg"}}) "change image"
   } catch (error) {
     next(error)
   } 
@@ -33,8 +41,6 @@ router.post('/new', async (req, res, next) => {
     next(error)
   }
 });
-
-
 
 /* GET One Present - Present Detail page */
 /* ROUTE /presents/:id */
