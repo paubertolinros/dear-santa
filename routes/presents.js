@@ -5,18 +5,18 @@ const Present = require("../models/Present.model.js")
 
 /* GET Presents page */
 /* ROUTE /presents*/
+//Sort presents alphabetically
 router.get('/', async (req, res, next) => {
   try {
-    const presents = await Present.find({});
-    res.render('presents', { presents });
-    //Sort presents alphabetically
-    const orderPresents = presents.sort((a, b) => {
-      if (a.name < b.name) {
+    const presents = await Present.find({}).sort({name:1});
+    /*presents.sort((a, b) => {
+      if (a.name.toLowerCase() < b.name.toLowerCase()) {
         return -1;
-      } if (a.name > b.name) {
+      } if (a.name.toLowerCase() > b.name.toLowerCase()) {
         return 1;
       } return 0;
-    });
+    });*/
+    res.render('presents', { presents });
     //return Present.updateOne({name: "The Colour Monster"}, {$set: {image:"/images/colour-monster-book-1.jpeg"}}) "change image"
   } catch (error) {
     next(error)
@@ -37,6 +37,19 @@ router.post('/new', async (req, res, next) => {
     const newPresent = await Present.create({ name, image, price, recipient, season, description });
     //res.redirect(`/presents/${newPresent._id}`); redirect detail
     res.redirect('/presents'); // redirect all presents
+  } catch (error) {
+    next(error)
+  }
+});
+
+
+/* GET delete show */
+/* ROUTE /presents/delete/:id */
+router.get('/delete/:id', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    await Present.findByIdAndDelete(id);
+    res.redirect('/presents');
   } catch (error) {
     next(error)
   }
