@@ -1,0 +1,22 @@
+<h2> New Present</h2>
+
+<form method="POST" action="/presents/new">
+  <label>Present title</label>
+  <input type="text" name="name" placeholder="Present title" required/>
+  <label>Present image</label>
+  <input type="text" name="image" placeholder="https://..." required>
+  <label>Present price</label>
+  <input type="number" name="price" placeholder="15" required>
+  <label>Present recipient</label>
+  <input type="text" name="recipient" placeholder="Anna" required>
+  <label>Present season</label>
+  <select name="season" placeholder="Christmas" required>
+    <option value="christmas">Christmas</option>
+    <option value="birthday">Birthday</option>
+    <option value="invisible friend">Invisible Friend</option>
+    <option value="other">Other</option>
+  </select>
+  <label> Present description </label>
+  <textarea name="description" cols="30" rows="5" required> Description </textarea>
+  <button type="submit">Create!</button>
+</form>
