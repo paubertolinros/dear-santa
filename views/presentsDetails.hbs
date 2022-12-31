@@ -1,4 +1,11 @@
-<div class="present-detail-container">
-  {{> cardPresents this}}
-  {{> cardDetailPresent this}}
+<section class="present-detail-container">
+  <div class="image-title-detail">
+    {{> cardPresents this}}
+  </div>
+  <div class="info-detail">
+    {{> cardDetailPresent this}}
+  </div>
+</section>
+<div class="button-back">
+  <button class="present-card-button"><a href="/presents">Back</a></button>
 </div>
