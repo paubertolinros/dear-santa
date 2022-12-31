@@ -389,11 +389,11 @@ img.logo {
   padding: 1rem 1.5rem;
   font-size: 0.8rem;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0px 3px 8px #B8C0A5;
+  /*box-shadow: 0px 3px 8px #B8C0A5;*/
 }
 
 .form-box textarea {
-  box-shadow: 0px 3px 8px #B8C0A5;
+  /*box-shadow: 0px 3px 8px #B8C0A5;*/
 }
 
 .form-box input:focus,select:focus,textarea:focus {
