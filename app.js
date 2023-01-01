@@ -19,7 +19,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 /*HELPER UPPERCASE*/
 hbs.registerHelper('toUpperCase', function(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 });
 
 app.use(logger('dev'));
