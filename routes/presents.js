@@ -42,7 +42,6 @@ router.post('/new', async (req, res, next) => {
   }
 });
 
-
 /* GET delete show */
 /* ROUTE /presents/delete/:id */
 router.get('/delete/:id', async (req, res, next) => {
@@ -50,6 +49,20 @@ router.get('/delete/:id', async (req, res, next) => {
   try {
     await Present.findByIdAndDelete(id);
     res.redirect('/presents');
+  } catch (error) {
+    next(error)
+  }
+});
+
+/* GET search results*/
+/* ROUTE /presents/search*/
+router.get('/search', async function (req, res, next) {
+  const { recipient } = req.query;
+  try {
+    //const present = await Present.findOne({ recipient });
+    const present = await Present.find({recipient:{$regex: recipient, $options: "i"}});
+    console.log(present)
+    res.render('search', { query: recipient, present });
   } catch (error) {
     next(error)
   }
