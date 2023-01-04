@@ -1,14 +1,14 @@
 module.exports = [
   {
     name: 'The Colour Monster',
-    image: '/images/colour-monster-book.jpeg',
+    image: '/images/colour-monster-book-1.jpeg',
     price: 16,
     recipient: 'Lila',
     season: 'christmas',
     description: 'We teach toddlers to identify colors, numbers, shapes, and letters— but what about their feelings? By illustrating such common emotions as happiness, sadness, anger, fear, and calm, this sensitive book gently encourages young children to open up with parents, teachers, and daycare providers. And kids will LOVE the bright illustrations on every page!'
   },
   {
-    name: 'Fuji Bike',
+    name: 'A+ Fuji Bike',
     image: '/images/bike-white.jpg',
     price: 200,
     recipient: 'Carla',
@@ -24,7 +24,7 @@ module.exports = [
     description: 'Perfect for beginners and those eager to learn classic calligraphy, Creative Hand Lettering includes all the information and materials you need to begin crafting gorgeous and ageless hand-lettered alphabets. Beautiful step-by-step projects demonstrate how to use the letters you have learned, while creative prompts and unique exercises inspire you to take your lettering to the next level.'
   },
   {
-    name: 'Polaroid Now i-Type Instant Camera',
+    name: 'Polaroid Now i-Type',
     image: '/images/pola.jpg',
     price: 99,
     recipient: 'Albert',
@@ -32,7 +32,7 @@ module.exports = [
     description: "Capture and keep your everyday moments forever with the Polaroid Now. Our new analog instant camera comes with autofocus to help you catch life as you live it in that iconic Polaroid instant film format. In 7 colors, plus black and white, there’s a Polaroid Now to suit you. Compatible with i-Type & 600 film."
   },
   {
-    name: 'Backgammon cocktail tray',
+    name: 'Backgammon tray',
     image: '/images/backgammon.jpg',
     price: 50,
     recipient: 'Pere',

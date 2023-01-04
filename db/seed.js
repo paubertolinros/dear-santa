@@ -7,6 +7,9 @@ const presents = require('./data.js')
 mongoose.connect(MONGO_URL)
   .then(response => console.log(`Connected to the DB, Hi! ${response.connection.name}`))
   .then(() => {
+    return Present.deleteMany()
+  })
+  .then(() => {
   return Present.create(presents)
   })
   .then(createdPresents => console.log(`Inserted ${createdPresents.length} presents in the database`))
