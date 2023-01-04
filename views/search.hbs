@@ -1,13 +1,17 @@
-<p> You have this presents for {{toUpperCase query}} </p>
-{{#each present}}
-{{#if this}}
-<div class="search-present">
-  {{>cardPresents this}}
-</div>
-  {{else}}
-  <p>Sorry, no presents found by {{query}}. Try again: <a href="/presents">go back to presents</a></p>
-{{/if}}
-{{/each}}
-<div class="button-back">
-  <button class="present-card-button"><a href="/presents">Back</a></button>
+<div class="search-elements-container">
+  <div class="search-presents-title">
+    <p> You have these {{toUpperCase query}}'s presents</p>
+  </div>
+  <div class="all-presents-container">
+    {{#if present}}
+      {{#each present}}
+        {{>cardCardPresentsAndButtons}}
+      {{/each}}
+      {{else}}
+      <p class ="not-found-presents">Sorry, no presents found by {{query}}. Try again: <a href="/presents">go back to presents</a></p>
+    {{/if}}
+  </div>
+  <div class="button-back">
+    <button class="present-card-button"><a href="/presents">Back</a></button>
+  </div>
 </div>
