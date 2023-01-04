@@ -61,7 +61,6 @@ router.get('/search', async function (req, res, next) {
   try {
     //const present = await Present.findOne({ recipient });
     const present = await Present.find({recipient:{$regex: recipient, $options: "i"}});
-    console.log(present)
     res.render('search', { query: recipient, present });
   } catch (error) {
     next(error)
